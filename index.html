@@ -3,270 +3,53 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Simon — Menuisier Fabricant</title>
+  <title>Simon Brodin — Menuisier Fabricant</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+3:wght@300;400;600&display=swap');
-
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --bois:       #8B6A3E;
-      --bois-clair: #C4A06A;
-      --encre:      #1C1A17;
-      --parchemin:  #F5F0E8;
-      --gris:       #6B6560;
-      --trait:      #D0C4B0;
+      --bois: #8B6A3E; --bois-clair: #C4A06A;
+      --encre: #1C1A17; --parchemin: #F5F0E8;
+      --gris: #6B6560; --trait: #D0C4B0;
     }
-
     html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Source Sans 3', sans-serif;
-      background: var(--parchemin);
-      color: var(--encre);
-      font-size: 17px;
-      line-height: 1.65;
-    }
-
-    header {
-      border-bottom: 2px solid var(--bois);
-      padding: 48px 40px 36px;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .label-metier {
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--bois-clair);
-    }
-
-    h1 {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: clamp(2rem, 5vw, 3.4rem);
-      font-weight: 700;
-      color: var(--encre);
-      line-height: 1.1;
-    }
-
-    h2 {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: clamp(1.2rem, 3vw, 1.8rem);
-      font-weight: 400;
-      color: var(--encre);
-      line-height: 1.25;
-    }
-
-    .tagline {
-      font-size: 15px;
-      color: var(--gris);
-      max-width: 480px;
-      margin-top: 4px;
-    }
-
-    nav {
-      margin-top: 24px;
-      display: flex;
-      gap: 28px;
-      flex-wrap: wrap;
-    }
-
-    nav a {
-      font-size: 14px;
-      font-weight: 600;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      color: var(--encre);
-      text-decoration: none;
-      border-bottom: 2px solid transparent;
-      padding-bottom: 2px;
-      transition: border-color 0.2s, color 0.2s;
-    }
-
-    nav a:hover {
-      color: var(--bois);
-      border-color: var(--bois);
-    }
-
-    .intro {
-      padding: 48px 40px;
-      border-bottom: 1px solid var(--trait);
-      max-width: 680px;
-    }
-
-    .intro p {
-      font-size: 17px;
-      color: var(--gris);
-      margin-top: 16px;
-    }
-
-    section {
-      padding: 52px 40px;
-      border-bottom: 1px solid var(--trait);
-    }
-
-    .section-header {
-      display: flex;
-      align-items: baseline;
-      gap: 16px;
-      margin-bottom: 32px;
-    }
-
-    .section-header h2 {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: var(--encre);
-    }
-
-    .section-header .trait-deco {
-      flex: 1;
-      height: 1px;
-      background: var(--trait);
-      max-width: 120px;
-    }
-
-    .galerie {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 12px;
-    }
-
-    .photo-card {
-      position: relative;
-      overflow: hidden;
-      background: #D6CCBC;
-      border: 1px solid var(--trait);
-    }
-
-    .photo-card img {
-      display: block;
-      width: 100%;
-      height: 260px;
-      object-fit: cover;
-      transition: transform 0.35s ease;
-      filter: sepia(8%) contrast(1.03);
-    }
-
-    .photo-card:hover img {
-      transform: scale(1.03);
-    }
-
-    .photo-card .legende {
-      padding: 10px 14px;
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      color: var(--gris);
-      background: white;
-      border-top: 1px solid var(--trait);
-      min-height: 52px;
-    }
-
-    .infos-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 28px;
-    }
-
-    .info-bloc h3 {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--bois-clair);
-      margin-bottom: 6px;
-    }
-
-    .info-bloc p {
-      font-size: 16px;
-      color: var(--encre);
-    }
-
-    .contact-zone {
-      background: var(--encre);
-      color: var(--parchemin);
-      padding: 52px 40px;
-    }
-
-    .contact-zone h2 {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 1.8rem;
-      margin-bottom: 24px;
-      color: var(--bois-clair);
-    }
-
-    .contact-zone p {
-      font-size: 16px;
-      color: #C0B8AA;
-      max-width: 520px;
-      margin-bottom: 28px;
-    }
-
-    .contact-zone a {
-      display: inline-block;
-      background: var(--bois);
-      color: white;
-      text-decoration: none;
-      padding: 13px 28px;
-      font-size: 15px;
-      font-weight: 600;
-      letter-spacing: 1px;
-      transition: background 0.2s;
-    }
-
-    .contact-zone a:hover {
-      background: var(--bois-clair);
-      color: var(--encre);
-    }
-
-    footer {
-      padding: 24px 40px;
-      font-size: 13px;
-      color: var(--gris);
-      border-top: 1px solid var(--trait);
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-      justify-content: space-between;
-    }
-
-    @media (max-width: 600px) {
-      header, section, .intro, .contact-zone, footer { padding-left: 20px; padding-right: 20px; }
-    }
-
-    .lightbox {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.92);
-      z-index: 1000;
-      align-items: center;
-      justify-content: center;
-      cursor: zoom-out;
-    }
-    .lightbox.active { display: flex; }
-    .lightbox img {
-      max-width: 92vw;
-      max-height: 92vh;
-      object-fit: contain;
-      filter: none;
-      box-shadow: 0 8px 48px rgba(0,0,0,0.6);
-    }
-    .lightbox-close {
-      position: fixed;
-      top: 20px;
-      right: 28px;
-      color: white;
-      font-size: 36px;
-      cursor: pointer;
-      line-height: 1;
-      opacity: 0.7;
-    }
-    .lightbox-close:hover { opacity: 1; }
+    body { font-family: 'Source Sans 3', sans-serif; background: var(--parchemin); color: var(--encre); font-size: 17px; line-height: 1.65; }
+    header { border-bottom: 2px solid var(--bois); padding: 48px 40px 36px; display: flex; flex-direction: column; gap: 8px; }
+    .label-metier { font-size: 12px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--bois-clair); }
+    h1 { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(2rem, 5vw, 3.4rem); font-weight: 700; color: var(--encre); line-height: 1.1; }
+    .tagline { font-size: 15px; color: var(--gris); max-width: 480px; margin-top: 4px; }
+    nav { margin-top: 24px; display: flex; gap: 28px; flex-wrap: wrap; }
+    nav a { font-size: 14px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--encre); text-decoration: none; border-bottom: 2px solid transparent; padding-bottom: 2px; transition: border-color 0.2s, color 0.2s; }
+    nav a:hover { color: var(--bois); border-color: var(--bois); }
+    .intro { padding: 48px 40px; border-bottom: 1px solid var(--trait); max-width: 680px; }
+    .intro h2 { font-family: 'Playfair Display', Georgia, serif; font-size: 1.6rem; font-weight: 700; margin-bottom: 16px; }
+    .intro p { font-size: 17px; color: var(--gris); }
+    .projets-section { padding: 52px 40px; }
+    .projets-section h2 { font-family: 'Playfair Display', Georgia, serif; font-size: 1.6rem; font-weight: 700; margin-bottom: 8px; }
+    .categorie-label { font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--bois-clair); margin-bottom: 24px; display: block; }
+    .projets-groupe { margin-bottom: 52px; }
+    .grille-projets { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
+    .projet-card { display: block; text-decoration: none; color: inherit; overflow: hidden; border: 1px solid var(--trait); background: #D6CCBC; transition: transform 0.2s; }
+    .projet-card:hover { transform: translateY(-3px); }
+    .projet-card img { display: block; width: 100%; height: 220px; object-fit: cover; filter: sepia(8%) contrast(1.03); transition: transform 0.35s ease; }
+    .projet-card:hover img { transform: scale(1.03); }
+    .projet-info { padding: 16px 18px; background: white; border-top: 1px solid var(--trait); }
+    .projet-info h3 { font-family: 'Playfair Display', Georgia, serif; font-size: 1.1rem; font-weight: 700; margin-bottom: 4px; }
+    .projet-info span { font-size: 12px; color: var(--gris); letter-spacing: 0.5px; }
+    .infos-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 28px; }
+    .info-bloc h3 { font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--bois-clair); margin-bottom: 6px; }
+    .info-bloc p { font-size: 16px; color: var(--encre); }
+    section { padding: 52px 40px; border-bottom: 1px solid var(--trait); }
+    .section-header { display: flex; align-items: baseline; gap: 16px; margin-bottom: 32px; }
+    .section-header h2 { font-family: 'Playfair Display', Georgia, serif; font-size: 1.6rem; font-weight: 700; }
+    .section-header .trait-deco { flex: 1; height: 1px; background: var(--trait); max-width: 120px; }
+    .contact-zone { background: var(--encre); color: var(--parchemin); padding: 52px 40px; }
+    .contact-zone h2 { font-family: 'Playfair Display', Georgia, serif; font-size: 1.8rem; margin-bottom: 24px; color: var(--bois-clair); }
+    .contact-zone p { font-size: 16px; color: #C0B8AA; max-width: 520px; margin-bottom: 28px; }
+    .contact-zone a { display: inline-block; background: var(--bois); color: white; text-decoration: none; padding: 13px 28px; font-size: 15px; font-weight: 600; letter-spacing: 1px; transition: background 0.2s; }
+    .contact-zone a:hover { background: var(--bois-clair); color: var(--encre); }
+    footer { padding: 24px 40px; font-size: 13px; color: var(--gris); border-top: 1px solid var(--trait); display: flex; gap: 16px; flex-wrap: wrap; justify-content: space-between; }
+    @media (max-width: 600px) { header, section, .intro, .projets-section, .contact-zone, footer { padding-left: 20px; padding-right: 20px; } }
   </style>
 </head>
 <body>
@@ -279,6 +62,7 @@
     <a href="#fabrication">Fabrication</a>
     <a href="#pose">Pose</a>
     <a href="#finition">Finition</a>
+    <a href="#profil">Profil</a>
     <a href="#contact">Contact</a>
   </nav>
 </header>
@@ -286,247 +70,89 @@
 <div class="intro">
   <h2>Compétences</h2>
   <p><strong>Globales</strong> — Conception, dessin 3D, préparation projet, calepinage, débit, corroyage, usinage, gabariage, collage, assemblage, finition, pose, maintenance machine et manutention.
-    <br><br><strong>Machines / outils</strong> — Scies (format, plongeante, sauteuse, onglet), dégauchisseuse, raboteuse, toupie, défonceuse, Lamello, Domino, tenonneuse, mortaiseuse, calibreuse, commande numérique.
-    <br><br>Ce portfolio regroupe mes chantiers récents — de la conception en atelier à la pose chez le client.</p>
+  <br><br><strong>Machines / outils</strong> — Scies (format, plongeante, sauteuse, onglet), dégauchisseuse, raboteuse, toupie, défonceuse, Lamello, Domino, tenonneuse, mortaiseuse, calibreuse, commande numérique.</p>
 </div>
 
-<!-- ══════════════ FABRICATION ══════════════ -->
-<section id="fabrication">
-  <div class="section-header">
+<!-- FABRICATION -->
+<div class="projets-section" id="fabrication">
+  <div class="projets-groupe">
     <h2>Fabrication atelier</h2>
-    <div class="trait-deco"></div>
-  </div>
-  <div class="photo-card">
-      <img src="Meuble.jpg" alt="Examen CAP : enfilade complète - Greta - 2026">
-      <div class="legende">Examen fin d'année CAP : conception et fabrication complète enfilade - Greta - 2026</div>
-    </div>
-    <div class="photo-card">
-      <img src="Meuble1.jpg" alt="Examen CAP : enfilade complète - Greta - 2026">
-      <div class="legende">Examen fin d'année CAP : conception et fabrication complète enfilade - Greta - 2026</div>
-    </div>
-    <div class="photo-card">
-      <img src="Meuble2.jpg" alt="Examen CAP : enfilade complète - Greta - 2026">
-      <div class="legende">Examen fin d'année CAP : conception et fabrication complète enfilade - Greta - 2026</div>
-    </div>
-    <div class="photo-card">
-      <img src="Meuble3.jpg" alt="Examen CAP : enfilade complète - Greta - 2026">
-      <div class="legende">Examen fin d'année CAP : conception et fabrication complète enfilade - Greta - 2026</div>
-    </div>
-    <div class="photo-card">
-      <img src="Meuble4.jpg" alt="Examen CAP : enfilade complète - Greta - 2026">
-      <div class="legende">Examen fin d'année CAP : conception et fabrication complète enfilade - Greta - 2026</div>
-    </div>
-    <div class="photo-card">
-      <img src="Meuble5.jpg" alt="Examen CAP : enfilade complète - Greta - 2026">
-      <div class="legende">Examen fin d'année CAP : conception et fabrication complète enfilade - Greta - 2026</div>
-    </div>
-  <div class="galerie">
-    <div class="photo-card">
-      <img src="Console.jpg" alt="Conception et fabrication console en groupe - Greta - 2026">
-      <div class="legende">Conception et fabrication console en groupe - Greta - 2026</div>
-    </div>
-    <div class="photo-card">
-      <img src="Console1.jpg" alt="Conception et fabrication console en groupe - Greta - 2026">
-      <div class="legende">Conception et fabrication console en groupe - Greta - 2026</div>
-    </div>
-    <div class="photo-card">
-      <img src="Console2.jpg" alt="Conception et fabrication console en groupe - Greta - 2026">
-      <div class="legende">Conception et fabrication console en groupe - Greta - 2026</div>
-    </div>
-    <div class="photo-card">
-      <img src="Console3.jpg" alt="Conception et fabrication console en groupe - Greta - 2026">
-      <div class="legende">Conception et fabrication console en groupe - Greta - 2026</div>
-    </div>
-    <div class="photo-card">
-      <img src="Console4.jpg" alt="Conception et fabrication console en groupe - Greta - 2026">
-      <div class="legende">Conception et fabrication console en groupe - Greta - 2026</div>
-    </div>
-    <div class="photo-card">
-      <img src="Etabli.jpg" alt="Fabrication d'un établi - Menuiserie Saint Joseph - 2026">
-      <div class="legende">Fabrication d'un établi - Menuiserie Saint Joseph - 2026</div>
-    </div>
-    <div class="photo-card">
-      <img src="Etabli2.jpg" alt="Fabrication d'un établi - Menuiserie Saint Joseph - 2026">
-      <div class="legende">Fabrication d'un établi - Menuiserie Saint Joseph - 2026</div>
-    </div>
-    <div class="photo-card">
-      <img src="Etabli3.jpg" alt="Fabrication d'un établi - Menuiserie Saint Joseph - 2026">
-      <div class="legende">Fabrication d'un établi - Menuiserie Saint Joseph - 2026</div>
-    </div>
-    <div class="photo-card">
-      <img src="Etabli4.jpg" alt="Fabrication d'un établi - Menuiserie Saint Joseph - 2026">
-      <div class="legende">Fabrication d'un établi - Menuiserie Saint Joseph - 2026</div>
-    </div>
-    <div class="photo-card">
-      <img src="Etabli5.jpg" alt="Fabrication d'un établi - Menuiserie Saint Joseph - 2026">
-      <div class="legende">Fabrication d'un établi - Menuiserie Saint Joseph - 2026</div>
-    </div>
-    <div class="photo-card">
-      <img src="Etabli6.jpg" alt="Fabrication d'un établi - Menuiserie Saint Joseph - 2026">
-      <div class="legende">Fabrication d'un établi - Menuiserie Saint Joseph - 2026</div>
-    </div>
-    <div class="photo-card">
-      <img src="Lit Comete1.jpg" alt="Fabrication d'un ensemble pour chambre d'enfant - Atelier Lanoë - 2026">
-      <div class="legende">Fabrication d'un ensemble pour chambre d'enfant - Atelier Lanoë - 2026</div>
-    </div>
-    <div class="photo-card">
-      <img src="Lit Comete2.jpg" alt="Fabrication d'un ensemble pour chambre d'enfant - Atelier Lanoë - 2026">
-      <div class="legende">Fabrication d'un ensemble pour chambre d'enfant - Atelier Lanoë - 2026</div>
-    </div>
-    <div class="photo-card">
-      <img src="Lit Comete3.jpg" alt="Fabrication d'un ensemble pour chambre d'enfant - Atelier Lanoë - 2026">
-      <div class="legende">Fabrication d'un ensemble pour chambre d'enfant - Atelier Lanoë - 2026</div>
-    </div>
-    <div class="photo-card">
-      <img src="Porte serviette1.jpg" alt="Exercice CAP : sèche-serviette - Greta - 2026">
-      <div class="legende">Exercice CAP : fabrication sèche-serviette - Greta - 2026</div>
-    </div>
-    <div class="photo-card">
-      <img src="Porte serviette2.jpg" alt="Exercice CAP : sèche-serviette - Greta - 2026">
-      <div class="legende">Exercice CAP : fabrication sèche-serviette - Greta - 2026</div>
-    </div>
-    <div class="photo-card">
-      <img src="Porte serviette3.jpg" alt="Exercice CAP : sèche-serviette - Greta - 2026">
-      <div class="legende">Exercice CAP : fabrication sèche-serviette - Greta - 2026</div>
-    </div>
-    <div class="photo-card">
-      <img src="Porte serviette4.jpg" alt="Exercice CAP : sèche-serviette - Greta - 2026">
-      <div class="legende">Exercice CAP : fabrication sèche-serviette - Greta - 2026</div>
-    </div>
-    <div class="photo-card">
-      <img src="Porte serviette5.jpg" alt="Exercice CAP : sèche-serviette - Greta - 2026">
-      <div class="legende">Exercice CAP : fabrication sèche-serviette - Greta - 2026</div>
-    </div>
-    <div class="photo-card">
-      <img src="Porte serviette6.jpg" alt="Exercice CAP : sèche-serviette - Greta - 2026">
-      <div class="legende">Exercice CAP : fabrication sèche-serviette - Greta - 2026</div>
-    </div>
-    <div class="photo-card">
-      <img src="Porte serviette7.jpg" alt="Exercice CAP : sèche-serviette - Greta - 2026">
-      <div class="legende">Exercice CAP : fabrication sèche-serviette - Greta - 2026</div>
-    </div>
-    <div class="photo-card">
-      <img src="Porte serviette8.jpg" alt="Exercice CAP : sèche-serviette - Greta - 2026">
-      <div class="legende">Exercice CAP : fabrication sèche-serviette - Greta - 2026</div>
-    </div>
-    <div class="photo-card">
-      <img src="Porte serviette9.jpg" alt="Exercice CAP : sèche-serviette - Greta - 2026">
-      <div class="legende">Exercice CAP : fabrication sèche-serviette - Greta - 2026</div>
-    </div>
-    <div class="photo-card">
-      <img src="Porte serviette10.jpg" alt="Exercice CAP : sèche-serviette - Greta - 2026">
-      <div class="legende">Exercice CAP : fabrication sèche-serviette - Greta - 2026</div>
+    <span class="categorie-label">Cliquez sur un projet pour voir toutes les photos</span>
+    <div class="grille-projets">
+      <a class="projet-card" href="console.html">
+        <img src="Console.jpg" alt="Console">
+        <div class="projet-info"><h3>Console</h3><span>Conception et fabrication en groupe · Greta · 2026 · 5 photos</span></div>
+      </a>
+      <a class="projet-card" href="etabli.html">
+        <img src="Etabli.jpg" alt="Établi">
+        <div class="projet-info"><h3>Établi</h3><span>Fabrication · Menuiserie Saint Joseph · 2026 · 6 photos</span></div>
+      </a>
+      <a class="projet-card" href="lit-comete.html">
+        <img src="Lit Comete1.jpg" alt="Lit Comète">
+        <div class="projet-info"><h3>Lit Comète</h3><span>Ensemble chambre d'enfant · Atelier Lanoë · 2026 · 3 photos</span></div>
+      </a>
+      <a class="projet-card" href="meuble.html">
+        <img src="Meuble.jpg" alt="Enfilade">
+        <div class="projet-info"><h3>Enfilade</h3><span>Examen CAP · Conception et fabrication complète · Greta · 2026 · 6 photos</span></div>
+      </a>
+      <a class="projet-card" href="porte-serviette.html">
+        <img src="Porte serviette1.jpg" alt="Sèche-serviette">
+        <div class="projet-info"><h3>Sèche-serviette</h3><span>Exercice CAP · Greta · 2026 · 10 photos</span></div>
+      </a>
     </div>
   </div>
-</section>
+</div>
 
-<!-- ══════════════ POSE ══════════════ -->
-<section id="pose">
-  <div class="section-header">
+<!-- POSE -->
+<div class="projets-section" id="pose" style="border-top: 1px solid var(--trait);">
+  <div class="projets-groupe">
     <h2>Pose &amp; agencement</h2>
-    <div class="trait-deco"></div>
-  </div>
-  <div class="galerie">
-    <div class="photo-card">
-      <img src="Bardage.jpg" alt="Débit et pose d'un bardage en Châtaignier">
-      <div class="legende">Débit et pose d'un bardage en Châtaignier - Atelier Lanoë - 2026</div>
-    </div>
-    <div class="photo-card">
-      <img src="Bardage2.jpg" alt="Débit et pose d'un bardage en Châtaignier">
-      <div class="legende">Débit et pose d'un bardage en Châtaignier - Atelier Lanoë - 2026</div>
-    </div>
-    <div class="photo-card">
-      <img src="Bardage3.jpg" alt="Débit et pose d'un bardage en Châtaignier">
-      <div class="legende">Débit et pose d'un bardage en Châtaignier - Atelier Lanoë - 2026</div>
-    </div>
-    <div class="photo-card">
-      <img src="Bardage4.jpg" alt="Débit et pose d'un bardage en Châtaignier">
-      <div class="legende">Débit et pose d'un bardage en Châtaignier - Atelier Lanoë - 2026</div>
-    </div>
-    <div class="photo-card">
-      <img src="Lambris.jpg" alt="Débit et pose d'un lambris dans des combles">
-      <div class="legende">Débit et pose d'un lambris dans des combles - Atelier Lanoë - 2026</div>
-    </div>
-    <div class="photo-card">
-      <img src="Porte1.jpg" alt="Pose dormants et porte double avec charnières invisibles">
-      <div class="legende">Pose dormants et porte double avec charnières invisibles</div>
-    </div>
-    <div class="photo-card">
-      <img src="Porte2.jpg" alt="Pose dormants et porte double avec charnières invisibles">
-      <div class="legende">Pose dormants et porte double avec charnières invisibles</div>
-    </div>
-    <div class="photo-card">
-      <img src="Porte3.jpg" alt="Pose dormants et porte double avec charnières invisibles">
-      <div class="legende">Pose dormants et porte double avec charnières invisibles</div>
-    </div>
-    <div class="photo-card">
-      <img src="Porte4.jpg" alt="Pose dormants et porte double avec charnières invisibles">
-      <div class="legende">Pose dormants et porte double avec charnières invisibles</div>
+    <span class="categorie-label">Cliquez sur un projet pour voir toutes les photos</span>
+    <div class="grille-projets">
+      <a class="projet-card" href="bardage.html">
+        <img src="Bardage.jpg" alt="Bardage">
+        <div class="projet-info"><h3>Bardage Châtaignier</h3><span>Débit et pose · Atelier Lanoë · 2026 · 4 photos</span></div>
+      </a>
+      <a class="projet-card" href="porte.html">
+        <img src="Porte1.jpg" alt="Porte double">
+        <div class="projet-info"><h3>Porte double</h3><span>Pose dormants et charnières invisibles · 4 photos</span></div>
+      </a>
     </div>
   </div>
-</section>
+</div>
 
-<!-- ══════════════ FINITION ══════════════ -->
-<section id="finition">
-  <div class="section-header">
+<!-- FINITION -->
+<div class="projets-section" id="finition" style="border-top: 1px solid var(--trait);">
+  <div class="projets-groupe">
     <h2>Finition</h2>
-    <div class="trait-deco"></div>
-  </div>
-  <div class="galerie">
-    <div class="photo-card">
-      <img src="Bar.jpg" alt="Ponçage et finition sur main courante d'un bar">
-      <div class="legende">Ponçage et finition sur main courante d'un bar - Atelier Lanoë - 2025</div>
-    </div>
-    <div class="photo-card">
-      <img src="Bar1.jpeg" alt="Ponçage et finition sur main courante d'un bar">
-      <div class="legende">Ponçage et finition - Atelier Lanoë (Photo Jeanne Dagron) - 2025</div>
-    </div>
-    <div class="photo-card">
-      <img src="Bar2.jpeg" alt="Ponçage et finition sur main courante d'un bar">
-      <div class="legende">Ponçage et finition - Atelier Lanoë (Photo Jeanne Dagron) - 2025</div>
-    </div>
-    <div class="photo-card">
-      <img src="Finition.jpg" alt="Finition ammoniaque et huile de lin sur chêne">
-      <div class="legende">Finition ammoniaque et huile de lin sur chêne - Atelier Lanoë - 2026</div>
-    </div>
-    <div class="photo-card">
-      <img src="Finition1.jpg" alt="Finition ammoniaque et huile de lin sur chêne">
-      <div class="legende">Finition ammoniaque et huile de lin sur chêne - Atelier Lanoë - 2026</div>
-    </div>
-    <div class="photo-card">
-      <img src="Finition2.jpg" alt="Finition ammoniaque et huile de lin sur chêne">
-      <div class="legende">Finition ammoniaque et huile de lin sur chêne - Atelier Lanoë - 2026</div>
+    <span class="categorie-label">Cliquez sur un projet pour voir toutes les photos</span>
+    <div class="grille-projets">
+      <a class="projet-card" href="bar.html">
+        <img src="Bar.jpg" alt="Bar">
+        <div class="projet-info"><h3>Bar</h3><span>Ponçage et finition main courante · Atelier Lanoë · 2025 · 3 photos</span></div>
+      </a>
+      <a class="projet-card" href="finition.html">
+        <img src="Finition.jpg" alt="Finition chêne">
+        <div class="projet-info"><h3>Finition chêne</h3><span>Ammoniaque et huile de lin · Atelier Lanoë · 2026 · 3 photos</span></div>
+      </a>
     </div>
   </div>
-</section>
+</div>
 
-<!-- ══════════════ PROFIL ══════════════ -->
-<section>
+<!-- PROFIL -->
+<section id="profil">
   <div class="section-header">
     <h2>Profil</h2>
     <div class="trait-deco"></div>
   </div>
   <div class="infos-grid">
-    <div class="info-bloc">
-      <h3>Formation</h3>
-      <p>CAP Menuisier Fabricant (Promo 2026)<br>Greta — Lycée La Champagne, Vitré</p>
-    </div>
-    <div class="info-bloc">
-      <h3>Secteur</h3>
-      <p>Rennes et agglomération</p>
-    </div>
-    <div class="info-bloc">
-      <h3>Spécialités</h3>
-      <p>Fabrication en bois massif, panneaux dérivés, agencement, mobilier sur mesure</p>
-    </div>
-    <div class="info-bloc">
-      <h3>Disponibilité</h3>
-      <p>Recherche missions intérim<br>Disponible à partir de mi-août</p>
-    </div>
+    <div class="info-bloc"><h3>Formation</h3><p>CAP Menuisier Fabricant (Promo 2026)<br>Greta — Lycée La Champagne, Vitré</p></div>
+    <div class="info-bloc"><h3>Secteur</h3><p>Rennes et agglomération</p></div>
+    <div class="info-bloc"><h3>Spécialités</h3><p>Fabrication en bois massif, panneaux dérivés, agencement, mobilier sur mesure</p></div>
+    <div class="info-bloc"><h3>Disponibilité</h3><p>Recherche missions intérim<br>Disponible à partir de mi-août</p></div>
   </div>
 </section>
 
-<!-- ══════════════ CONTACT ══════════════ -->
 <div class="contact-zone" id="contact">
   <h2>Me contacter</h2>
   <p>Pour un chantier, une mission en intérim ou une collaboration, n'hésitez pas à m'écrire.</p>
@@ -537,27 +163,5 @@
   <span>Simon Brodin — Menuisier Fabricant, Rennes</span>
   <span>© 2026</span>
 </footer>
-
-<div class="lightbox" id="lightbox" onclick="closeLightbox()">
-  <span class="lightbox-close" onclick="closeLightbox()">✕</span>
-  <img id="lightbox-img" src="" alt="">
-</div>
-
-<script>
-  document.querySelectorAll('.photo-card img').forEach(img => {
-    img.style.cursor = 'zoom-in';
-    img.addEventListener('click', function(e) {
-      e.stopPropagation();
-      document.getElementById('lightbox-img').src = this.src;
-      document.getElementById('lightbox').classList.add('active');
-    });
-  });
-  function closeLightbox() {
-    document.getElementById('lightbox').classList.remove('active');
-  }
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') closeLightbox();
-  });
-</script>
 </body>
 </html>

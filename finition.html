@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Finition chêne — Simon Brodin</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+3:wght@300;400;600&display=swap');
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --bois: #8B6A3E; --bois-clair: #C4A06A; --encre: #1C1A17; --parchemin: #F5F0E8; --gris: #6B6560; --trait: #D0C4B0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Source Sans 3', sans-serif; background: var(--parchemin); color: var(--encre); font-size: 17px; line-height: 1.65; }
+    .topbar { border-bottom: 2px solid var(--bois); padding: 24px 40px; display: flex; align-items: center; gap: 24px; }
+    .topbar a.retour { font-size: 13px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--bois); text-decoration: none; border-bottom: 1px solid var(--bois); padding-bottom: 1px; }
+    .topbar a.retour:hover { color: var(--encre); border-color: var(--encre); }
+    .page-header { padding: 40px 40px 32px; border-bottom: 1px solid var(--trait); }
+    .label { font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--bois-clair); margin-bottom: 8px; }
+    h1 { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700; color: var(--encre); line-height: 1.1; }
+    .galerie { padding: 40px; display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; }
+    .photo-card { position: relative; overflow: hidden; background: #D6CCBC; border: 1px solid var(--trait); }
+    .photo-card img { display: block; width: 100%; height: 260px; object-fit: cover; transition: transform 0.35s ease; filter: sepia(8%) contrast(1.03); cursor: zoom-in; }
+    .photo-card:hover img { transform: scale(1.03); }
+    .photo-card .legende { padding: 10px 14px; font-size: 13px; font-weight: 600; letter-spacing: 0.5px; color: var(--gris); background: white; border-top: 1px solid var(--trait); min-height: 52px; }
+    .lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.92); z-index: 1000; align-items: center; justify-content: center; cursor: zoom-out; }
+    .lightbox.active { display: flex; }
+    .lightbox img { max-width: 92vw; max-height: 92vh; object-fit: contain; filter: none; box-shadow: 0 8px 48px rgba(0,0,0,0.6); }
+    .lightbox-close { position: fixed; top: 20px; right: 28px; color: white; font-size: 36px; cursor: pointer; line-height: 1; opacity: 0.7; }
+    .lightbox-close:hover { opacity: 1; }
+    footer { padding: 24px 40px; font-size: 13px; color: var(--gris); border-top: 1px solid var(--trait); display: flex; gap: 16px; flex-wrap: wrap; justify-content: space-between; }
+    @media (max-width: 600px) { .topbar, .page-header, .galerie, footer { padding-left: 20px; padding-right: 20px; } }
+  </style>
+</head>
+<body>
+<div class="topbar">
+  <a class="retour" href="index.html">← Retour</a>
+</div>
+<div class="page-header">
+  <div class="label">Portfolio — Simon Brodin</div>
+  <h1>Finition chêne</h1>
+  <p style="margin-top:8px;font-size:15px;color:var(--gris)">Ammoniaque et huile de lin · Atelier Lanoë · 2026</p>
+</div>
+<div class="galerie">
+<div class="photo-card"><img src="Finition.jpg" alt="Finition chêne"><div class="legende">Finition ammoniaque et huile de lin sur chêne · Atelier Lanoë · 2026</div></div><div class="photo-card"><img src="Finition1.jpg" alt="Finition chêne"><div class="legende">Finition ammoniaque et huile de lin sur chêne · Atelier Lanoë · 2026</div></div><div class="photo-card"><img src="Finition2.jpg" alt="Finition chêne"><div class="legende">Finition ammoniaque et huile de lin sur chêne · Atelier Lanoë · 2026</div></div>
+</div>
+<footer>
+  <span>Simon Brodin — Menuisier Fabricant, Rennes</span>
+  <span><a href="index.html" style="color:var(--gris)">Retour au portfolio</a></span>
+</footer>
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <span class="lightbox-close" onclick="closeLightbox()">✕</span>
+  <img id="lightbox-img" src="" alt="">
+</div>
+<script>
+  document.querySelectorAll('.photo-card img').forEach(img => {
+    img.addEventListener('click', function(e) {
+      e.stopPropagation();
+      document.getElementById('lightbox-img').src = this.src;
+      document.getElementById('lightbox').classList.add('active');
+    });
+  });
+  function closeLightbox() { document.getElementById('lightbox').classList.remove('active'); }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeLightbox(); });
+</script>
+</body>
+</html>
