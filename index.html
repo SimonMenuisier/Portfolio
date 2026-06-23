@@ -10,12 +10,12 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bois:     #8B6A3E;
+      --bois:       #8B6A3E;
       --bois-clair: #C4A06A;
-      --encre:    #1C1A17;
-      --parchemin:#F5F0E8;
-      --gris:     #6B6560;
-      --trait:    #D0C4B0;
+      --encre:      #1C1A17;
+      --parchemin:  #F5F0E8;
+      --gris:       #6B6560;
+      --trait:      #D0C4B0;
     }
 
     html { scroll-behavior: smooth; }
@@ -28,7 +28,6 @@
       line-height: 1.65;
     }
 
-    /* ─── EN-TÊTE ─── */
     header {
       border-bottom: 2px solid var(--bois);
       padding: 48px 40px 36px;
@@ -38,7 +37,6 @@
     }
 
     .label-metier {
-      font-family: 'Source Sans 3', sans-serif;
       font-size: 12px;
       font-weight: 600;
       letter-spacing: 3px;
@@ -93,7 +91,6 @@
       border-color: var(--bois);
     }
 
-    /* ─── INTRO ─── */
     .intro {
       padding: 48px 40px;
       border-bottom: 1px solid var(--trait);
@@ -106,7 +103,6 @@
       margin-top: 16px;
     }
 
-    /* ─── SECTIONS ─── */
     section {
       padding: 52px 40px;
       border-bottom: 1px solid var(--trait);
@@ -133,7 +129,6 @@
       max-width: 120px;
     }
 
-    /* ─── GRILLE PHOTOS ─── */
     .galerie {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -161,36 +156,16 @@
     }
 
     .photo-card .legende {
-  padding: 10px 14px;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  color: var(--gris);
-  background: white;
-  border-top: 1px solid var(--trait);
-  min-height: 52px;
-}
-
-    /* ─── PLACEHOLDER ─── */
-    .placeholder-card {
-      aspect-ratio: 4/3;
-      background: #E8E0D0;
-      border: 2px dashed var(--trait);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      color: var(--gris);
+      padding: 10px 14px;
       font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      color: var(--gris);
+      background: white;
+      border-top: 1px solid var(--trait);
+      min-height: 52px;
     }
 
-    .placeholder-card .icone {
-      font-size: 32px;
-      opacity: 0.4;
-    }
-
-    /* ─── INFOS ─── */
     .infos-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -211,7 +186,6 @@
       color: var(--encre);
     }
 
-    /* ─── CONTACT ─── */
     .contact-zone {
       background: var(--encre);
       color: var(--parchemin);
@@ -249,7 +223,6 @@
       color: var(--encre);
     }
 
-    /* ─── PIED DE PAGE ─── */
     footer {
       padding: 24px 40px;
       font-size: 13px;
@@ -261,12 +234,10 @@
       justify-content: space-between;
     }
 
-    /* ─── RESPONSIVE ─── */
     @media (max-width: 600px) {
       header, section, .intro, .contact-zone, footer { padding-left: 20px; padding-right: 20px; }
     }
 
-    /* ─── LIGHTBOX ─── */
     .lightbox {
       display: none;
       position: fixed;
@@ -277,9 +248,7 @@
       justify-content: center;
       cursor: zoom-out;
     }
-    .lightbox.active {
-      display: flex;
-    }
+    .lightbox.active { display: flex; }
     .lightbox img {
       max-width: 92vw;
       max-height: 92vh;
@@ -302,11 +271,10 @@
 </head>
 <body>
 
-<!-- ══════════════ EN-TÊTE ══════════════ -->
 <header>
   <span class="label-metier">Menuisier Fabricant &amp; Poseur — Rennes</span>
   <h1>Simon Brodin</h1>
-  <p class="tagline">Diplomé du CAP Menuisier Fabricant - Greta (Lycée La Champagne, Vitré - 2026).</p>
+  <p class="tagline">Diplômé du CAP Menuisier Fabricant - Greta (Lycée La Champagne, Vitré - 2026).</p>
   <nav>
     <a href="#fabrication">Fabrication</a>
     <a href="#pose">Pose</a>
@@ -315,7 +283,6 @@
   </nav>
 </header>
 
-<!-- ══════════════ INTRO ══════════════ -->
 <div class="intro">
   <h2>Compétences</h2>
   <p><strong>Globales</strong> — Conception, dessin 3D, préparation projet, calepinage, débit, corroyage, usinage, gabariage, collage, assemblage, finition, pose, maintenance machine et manutention.
@@ -323,7 +290,7 @@
     <br><br>Ce portfolio regroupe mes chantiers récents — de la conception en atelier à la pose chez le client.</p>
 </div>
 
-<!-- ══════════════ SECTION FABRICATION ══════════════ -->
+<!-- ══════════════ FABRICATION ══════════════ -->
 <section id="fabrication">
   <div class="section-header">
     <h2>Fabrication atelier</h2>
@@ -331,158 +298,129 @@
   </div>
   <div class="galerie">
     <div class="photo-card">
-  <img src="Console.jpg" alt="Conception et fabrication console en groupe - Greta - 2026">
-  <div class="legende">Conception et fabrication console en groupe - Greta - 2026</div>
-</div>
-    <div class="galerie">
+      <img src="Console.jpg" alt="Conception et fabrication console en groupe - Greta - 2026">
+      <div class="legende">Conception et fabrication console en groupe - Greta - 2026</div>
+    </div>
     <div class="photo-card">
-  <img src="Console1.jpg" alt="Conception et fabrication console en groupe - Greta - 2026">
-  <div class="legende">Conception et fabrication console en groupe - Greta - 2026</div>
-</div>
-      <div class="galerie">
+      <img src="Console1.jpg" alt="Conception et fabrication console en groupe - Greta - 2026">
+      <div class="legende">Conception et fabrication console en groupe - Greta - 2026</div>
+    </div>
     <div class="photo-card">
-  <img src="Console2.jpg" alt="Conception et fabrication console en groupe - Greta - 2026">
-  <div class="legende">Conception et fabrication console en groupe - Greta - 2026</div>
-</div>
-        <div class="galerie">
+      <img src="Console2.jpg" alt="Conception et fabrication console en groupe - Greta - 2026">
+      <div class="legende">Conception et fabrication console en groupe - Greta - 2026</div>
+    </div>
     <div class="photo-card">
-  <img src="Console3.jpg" alt="Conception et fabrication console en groupe - Greta - 2026">
-  <div class="legende">Conception et fabrication console en groupe - Greta - 2026</div>
-</div>
-          <div class="galerie">
+      <img src="Console3.jpg" alt="Conception et fabrication console en groupe - Greta - 2026">
+      <div class="legende">Conception et fabrication console en groupe - Greta - 2026</div>
+    </div>
     <div class="photo-card">
-  <img src="Console4.jpg" alt="Conception et fabrication console en groupe - Greta - 2026">
-  <div class="legende">Conception et fabrication console en groupe - Greta - 2026</div>
-</div>
-            <div class="galerie">
+      <img src="Console4.jpg" alt="Conception et fabrication console en groupe - Greta - 2026">
+      <div class="legende">Conception et fabrication console en groupe - Greta - 2026</div>
+    </div>
     <div class="photo-card">
-  <img src="Etabli.jpg" alt="Fabrication d'un établi - Menuiserie Saint Joseph - 2026">
-  <div class="legende">Fabrication d'un établi - Menuiserie Saint Joseph - 2026</div>
-</div>
-      <div class="galerie">
+      <img src="Etabli.jpg" alt="Fabrication d'un établi - Menuiserie Saint Joseph - 2026">
+      <div class="legende">Fabrication d'un établi - Menuiserie Saint Joseph - 2026</div>
+    </div>
     <div class="photo-card">
-  <img src="Etabli2.jpg" alt="Fabrication d'un établi - Menuiserie Saint Joseph - 2026">
-  <div class="legende">Fabrication d'un établi - Menuiserie Saint Joseph - 2026</div>
-</div>
-      <div class="galerie">
+      <img src="Etabli2.jpg" alt="Fabrication d'un établi - Menuiserie Saint Joseph - 2026">
+      <div class="legende">Fabrication d'un établi - Menuiserie Saint Joseph - 2026</div>
+    </div>
     <div class="photo-card">
-  <img src="Etabli3.jpg" alt="Fabrication d'un établi - Menuiserie Saint Joseph - 2026">
-  <div class="legende">Fabrication d'un établi - Menuiserie Saint Joseph - 2026</div>
-</div>
-      <div class="galerie">
+      <img src="Etabli3.jpg" alt="Fabrication d'un établi - Menuiserie Saint Joseph - 2026">
+      <div class="legende">Fabrication d'un établi - Menuiserie Saint Joseph - 2026</div>
+    </div>
     <div class="photo-card">
-  <img src="Etabli4.jpg" alt="Fabrication d'un établi - Menuiserie Saint Joseph - 2026">
-  <div class="legende">Fabrication d'un établi - Menuiserie Saint Joseph - 2026</div>
-</div>
-      <div class="galerie">
+      <img src="Etabli4.jpg" alt="Fabrication d'un établi - Menuiserie Saint Joseph - 2026">
+      <div class="legende">Fabrication d'un établi - Menuiserie Saint Joseph - 2026</div>
+    </div>
     <div class="photo-card">
-  <img src="Etabli5.jpg" alt="Fabrication d'un établi - Menuiserie Saint Joseph - 2026">
-  <div class="legende">Fabrication d'un établi - Menuiserie Saint Joseph - 2026</div>
-</div>
-      <div class="galerie">
+      <img src="Etabli5.jpg" alt="Fabrication d'un établi - Menuiserie Saint Joseph - 2026">
+      <div class="legende">Fabrication d'un établi - Menuiserie Saint Joseph - 2026</div>
+    </div>
     <div class="photo-card">
-  <img src="Etabli6.jpg" alt="Fabrication d'un établi - Menuiserie Saint Joseph - 2026">
-  <div class="legende">Fabrication d'un établi - Menuiserie Saint Joseph - 2026</div>
-</div>
-      <div class="galerie">
+      <img src="Etabli6.jpg" alt="Fabrication d'un établi - Menuiserie Saint Joseph - 2026">
+      <div class="legende">Fabrication d'un établi - Menuiserie Saint Joseph - 2026</div>
+    </div>
     <div class="photo-card">
-  <img src="Lit Comete1.jpg" alt="Fabrication d'un ensemble pour chambre d'enfant - Atelier Lanoë - 2026">
-  <div class="legende">Fabrication d'un ensemble pour chambre d'enfant - Atelier Lanoë - 2026</div>
-</div>
-      <div class="galerie">
+      <img src="Lit Comete1.jpg" alt="Fabrication d'un ensemble pour chambre d'enfant - Atelier Lanoë - 2026">
+      <div class="legende">Fabrication d'un ensemble pour chambre d'enfant - Atelier Lanoë - 2026</div>
+    </div>
     <div class="photo-card">
-  <img src="Lit Comete2.jpg" alt="Fabrication d'un ensemble pour chambre d'enfant - Atelier Lanoë - 2026">
-  <div class="legende">Fabrication d'un ensemble pour chambre d'enfant - Atelier Lanoë - 2026</div>
-</div>
-      <div class="galerie">
+      <img src="Lit Comete2.jpg" alt="Fabrication d'un ensemble pour chambre d'enfant - Atelier Lanoë - 2026">
+      <div class="legende">Fabrication d'un ensemble pour chambre d'enfant - Atelier Lanoë - 2026</div>
+    </div>
     <div class="photo-card">
-  <img src="Lit Comete3.jpg" alt="Fabrication d'un ensemble pour chambre d'enfant - Atelier Lanoë - 2026">
-  <div class="legende">Fabrication d'un ensemble pour chambre d'enfant - Atelier Lanoë - 2026</div>
-</div>
-      <div class="galerie">
+      <img src="Lit Comete3.jpg" alt="Fabrication d'un ensemble pour chambre d'enfant - Atelier Lanoë - 2026">
+      <div class="legende">Fabrication d'un ensemble pour chambre d'enfant - Atelier Lanoë - 2026</div>
+    </div>
     <div class="photo-card">
-  <img src="Meuble.jpg" alt="Examen fin d'année CAP : conception et fabrication complète enfilade - Greta - 2026">
-  <div class="legende">Examen fin d'année CAP : conception et fabrication complète enfilade - Greta - 2026</div>
-</div>
-      <div class="galerie">
+      <img src="Meuble.jpg" alt="Examen CAP : enfilade complète - Greta - 2026">
+      <div class="legende">Examen fin d'année CAP : conception et fabrication complète enfilade - Greta - 2026</div>
+    </div>
     <div class="photo-card">
-  <img src="Meuble1.jpg" alt="Examen fin d'année CAP : conception et fabrication complète enfilade - Greta - 2026">
-  <div class="legende">Examen fin d'année CAP : conception et fabrication complète enfilade - Greta - 2026</div>
-</div>
-      <div class="galerie">
+      <img src="Meuble1.jpg" alt="Examen CAP : enfilade complète - Greta - 2026">
+      <div class="legende">Examen fin d'année CAP : conception et fabrication complète enfilade - Greta - 2026</div>
+    </div>
     <div class="photo-card">
-  <img src="Meuble2.jpg" alt="Examen fin d'année CAP : conception et fabrication complète enfilade - Greta - 2026">
-  <div class="legende">Examen fin d'année CAP : conception et fabrication complète enfilade - Greta - 2026</div>
-</div>
-      <div class="galerie">
+      <img src="Meuble2.jpg" alt="Examen CAP : enfilade complète - Greta - 2026">
+      <div class="legende">Examen fin d'année CAP : conception et fabrication complète enfilade - Greta - 2026</div>
+    </div>
     <div class="photo-card">
-  <img src="Meuble3.jpg" alt="Examen fin d'année CAP : conception et fabrication complète enfilade - Greta - 2026">
-  <div class="legende">Examen fin d'année CAP : conception et fabrication complète enfilade - Greta - 2026</div>
-</div>
-      <div class="galerie">
+      <img src="Meuble3.jpg" alt="Examen CAP : enfilade complète - Greta - 2026">
+      <div class="legende">Examen fin d'année CAP : conception et fabrication complète enfilade - Greta - 2026</div>
+    </div>
     <div class="photo-card">
-  <img src="Meuble4.jpg" alt="Examen fin d'année CAP : conception et fabrication complète enfilade - Greta - 2026">
-  <div class="legende">Examen fin d'année CAP : conception et fabrication complète enfilade - Greta - 2026</div>
-</div>
-      <div class="galerie">
+      <img src="Meuble4.jpg" alt="Examen CAP : enfilade complète - Greta - 2026">
+      <div class="legende">Examen fin d'année CAP : conception et fabrication complète enfilade - Greta - 2026</div>
+    </div>
     <div class="photo-card">
-  <img src="Meuble5.jpg" alt="Examen fin d'année CAP : conception et fabrication complète enfilade - Greta - 2026">
-  <div class="legende">Examen fin d'année CAP : conception et fabrication complète enfilade - Greta - 2026</div>
-</div>
-      <div class="galerie">
+      <img src="Meuble5.jpg" alt="Examen CAP : enfilade complète - Greta - 2026">
+      <div class="legende">Examen fin d'année CAP : conception et fabrication complète enfilade - Greta - 2026</div>
+    </div>
     <div class="photo-card">
-  <img src="Porte serviette1.jpg" alt="Exercice CAP : fabrication sèche serviette - Greta - 2026">
-  <div class="legende">Exercice CAP : fabrication sèche serviette - Greta - 2026</div>
-</div>
-      <div class="galerie">
+      <img src="Porte serviette1.jpg" alt="Exercice CAP : sèche-serviette - Greta - 2026">
+      <div class="legende">Exercice CAP : fabrication sèche-serviette - Greta - 2026</div>
+    </div>
     <div class="photo-card">
-  <img src="Porte serviette2.jpg" alt="Exercice CAP : fabrication sèche serviette - Greta - 2026">
-  <div class="legende">Exercice CAP : fabrication sèche serviette - Greta - 2026</div>
-</div>
-      <div class="galerie">
+      <img src="Porte serviette2.jpg" alt="Exercice CAP : sèche-serviette - Greta - 2026">
+      <div class="legende">Exercice CAP : fabrication sèche-serviette - Greta - 2026</div>
+    </div>
     <div class="photo-card">
-  <img src="Porte serviette3.jpg" alt="Exercice CAP : fabrication sèche serviette - Greta - 2026">
-  <div class="legende">Exercice CAP : fabrication sèche serviette - Greta - 2026</div>
-</div>
-      <div class="galerie">
+      <img src="Porte serviette3.jpg" alt="Exercice CAP : sèche-serviette - Greta - 2026">
+      <div class="legende">Exercice CAP : fabrication sèche-serviette - Greta - 2026</div>
+    </div>
     <div class="photo-card">
-  <img src="Porte serviette4.jpg" alt="Exercice CAP : fabrication sèche serviette - Greta - 2026">
-  <div class="legende">Exercice CAP : fabrication sèche serviette - Greta - 2026</div>
-</div>
-      <div class="galerie">
+      <img src="Porte serviette4.jpg" alt="Exercice CAP : sèche-serviette - Greta - 2026">
+      <div class="legende">Exercice CAP : fabrication sèche-serviette - Greta - 2026</div>
+    </div>
     <div class="photo-card">
-  <img src="Porte serviette5.jpg" alt="Exercice CAP : fabrication sèche serviette - Greta - 2026">
-  <div class="legende">Exercice CAP : fabrication sèche serviette - Greta - 2026</div>
-</div>
-      <div class="galerie">
+      <img src="Porte serviette5.jpg" alt="Exercice CAP : sèche-serviette - Greta - 2026">
+      <div class="legende">Exercice CAP : fabrication sèche-serviette - Greta - 2026</div>
+    </div>
     <div class="photo-card">
-  <img src="Porte serviette6.jpg" alt="Exercice CAP : fabrication sèche serviette - Greta - 2026">
-  <div class="legende">Exercice CAP : fabrication sèche serviette - Greta - 2026</div>
-</div>
-      <div class="galerie">
+      <img src="Porte serviette6.jpg" alt="Exercice CAP : sèche-serviette - Greta - 2026">
+      <div class="legende">Exercice CAP : fabrication sèche-serviette - Greta - 2026</div>
+    </div>
     <div class="photo-card">
-  <img src="Porte serviette7.jpg" alt="Exercice CAP : fabrication sèche serviette - Greta - 2026">
-  <div class="legende">Exercice CAP : fabrication sèche serviette - Greta - 2026</div>
-</div>
-      <div class="galerie">
+      <img src="Porte serviette7.jpg" alt="Exercice CAP : sèche-serviette - Greta - 2026">
+      <div class="legende">Exercice CAP : fabrication sèche-serviette - Greta - 2026</div>
+    </div>
     <div class="photo-card">
-  <img src="Porte serviette8.jpg" alt="Exercice CAP : fabrication sèche serviette - Greta - 2026">
-  <div class="legende">Exercice CAP : fabrication sèche serviette - Greta - 2026</div>
-</div>
-      <div class="galerie">
+      <img src="Porte serviette8.jpg" alt="Exercice CAP : sèche-serviette - Greta - 2026">
+      <div class="legende">Exercice CAP : fabrication sèche-serviette - Greta - 2026</div>
+    </div>
     <div class="photo-card">
-  <img src="Porte serviette9.jpg" alt="Exercice CAP : fabrication sèche serviette - Greta - 2026">
-  <div class="legende">Exercice CAP : fabrication sèche serviette - Greta - 2026</div>
-</div>
-      <div class="galerie">
+      <img src="Porte serviette9.jpg" alt="Exercice CAP : sèche-serviette - Greta - 2026">
+      <div class="legende">Exercice CAP : fabrication sèche-serviette - Greta - 2026</div>
+    </div>
     <div class="photo-card">
-  <img src="Porte serviette10.jpg" alt="Exercice CAP : fabrication sèche serviette - Greta - 2026">
-  <div class="legende">Exercice CAP : fabrication sèche serviette - Greta - 2026</div>
-</div>
+      <img src="Porte serviette10.jpg" alt="Exercice CAP : sèche-serviette - Greta - 2026">
+      <div class="legende">Exercice CAP : fabrication sèche-serviette - Greta - 2026</div>
+    </div>
   </div>
 </section>
 
-<!-- ══════════════ SECTION POSE ══════════════ -->
+<!-- ══════════════ POSE ══════════════ -->
 <section id="pose">
   <div class="section-header">
     <h2>Pose &amp; agencement</h2>
@@ -490,54 +428,45 @@
   </div>
   <div class="galerie">
     <div class="photo-card">
-  <img src="Bardage.jpg" alt="Débit et pose d'un bardage en Chataîgnier">
-  <div class="legende">Débit et pose d'un bardage en Chataîgnier - Atelier Lanoë - 2026</div>
-</div>
-    <div class="galerie">
+      <img src="Bardage.jpg" alt="Débit et pose d'un bardage en Châtaignier">
+      <div class="legende">Débit et pose d'un bardage en Châtaignier - Atelier Lanoë - 2026</div>
+    </div>
     <div class="photo-card">
-  <img src="Bardage2.jpg" alt="Débit et pose d'un bardage en Chataîgnier">
-  <div class="legende">Débit et pose d'un bardage en Chataîgnier - Atelier Lanoë - 2026</div>
-</div>
-      <div class="galerie">
+      <img src="Bardage2.jpg" alt="Débit et pose d'un bardage en Châtaignier">
+      <div class="legende">Débit et pose d'un bardage en Châtaignier - Atelier Lanoë - 2026</div>
+    </div>
     <div class="photo-card">
-  <img src="Bardage3.jpg" alt="Débit et pose d'un bardage en Chataîgnier">
-  <div class="legende">Débit et pose d'un bardage en Chataîgnier - Atelier Lanoë - 2026</div>
-</div>
-        <div class="galerie">
+      <img src="Bardage3.jpg" alt="Débit et pose d'un bardage en Châtaignier">
+      <div class="legende">Débit et pose d'un bardage en Châtaignier - Atelier Lanoë - 2026</div>
+    </div>
     <div class="photo-card">
-  <img src="Bardage4.jpg" alt="Débit et pose d'un bardage en Chataîgnier">
-  <div class="legende">Débit et pose d'un bardage en Chataîgnier - Atelier Lanoë - 2026</div>
-</div>
-  </div>
-        <div class="galerie">
+      <img src="Bardage4.jpg" alt="Débit et pose d'un bardage en Châtaignier">
+      <div class="legende">Débit et pose d'un bardage en Châtaignier - Atelier Lanoë - 2026</div>
+    </div>
     <div class="photo-card">
-  <img src="Lambris.jpg" alt="Débit et pose d'un lamrbis dans des combles">
-  <div class="legende">Débit et pose d'un lamrbis dans des combles - Atelier Lanoë - 2026</div>
-</div>
-          <div class="galerie">
+      <img src="Lambris.jpg" alt="Débit et pose d'un lambris dans des combles">
+      <div class="legende">Débit et pose d'un lambris dans des combles - Atelier Lanoë - 2026</div>
+    </div>
     <div class="photo-card">
-  <img src="Porte1.jpg" alt="Pose dormants et porte double avec charnières invisibles">
-  <div class="legende">Pose dormants et porte double avec charnières invisibles</div>
-</div>
-            <div class="galerie">
+      <img src="Porte1.jpg" alt="Pose dormants et porte double avec charnières invisibles">
+      <div class="legende">Pose dormants et porte double avec charnières invisibles</div>
+    </div>
     <div class="photo-card">
-  <img src="Porte2.jpg" alt="Pose dormants et porte double avec charnières invisibles">
-  <div class="legende">Pose dormants et porte double avec charnières invisibles</div>
-</div>
-              <div class="galerie">
+      <img src="Porte2.jpg" alt="Pose dormants et porte double avec charnières invisibles">
+      <div class="legende">Pose dormants et porte double avec charnières invisibles</div>
+    </div>
     <div class="photo-card">
-  <img src="Porte3.jpg" alt="Pose dormants et porte double avec charnières invisibles">
-  <div class="legende">Pose dormants et porte double avec charnières invisibles</div>
-</div>
-                <div class="galerie">
+      <img src="Porte3.jpg" alt="Pose dormants et porte double avec charnières invisibles">
+      <div class="legende">Pose dormants et porte double avec charnières invisibles</div>
+    </div>
     <div class="photo-card">
-  <img src="Porte4.jpg" alt="Pose dormants et porte double avec charnières invisibles">
-  <div class="legende">Pose dormants et porte double avec charnières invisibles</div>
-</div>
+      <img src="Porte4.jpg" alt="Pose dormants et porte double avec charnières invisibles">
+      <div class="legende">Pose dormants et porte double avec charnières invisibles</div>
+    </div>
   </div>
 </section>
 
-<!-- ══════════════ SECTION FINITION ══════════════ -->
+<!-- ══════════════ FINITION ══════════════ -->
 <section id="finition">
   <div class="section-header">
     <h2>Finition</h2>
@@ -546,35 +475,29 @@
   <div class="galerie">
     <div class="photo-card">
       <img src="Bar.jpg" alt="Ponçage et finition sur main courante d'un bar">
-      <div class="legende">Ponçage et finition sur main courante d'un bar - Atelier Lanoë — 2025</div>
+      <div class="legende">Ponçage et finition sur main courante d'un bar - Atelier Lanoë - 2025</div>
     </div>
-     <div class="galerie">
     <div class="photo-card">
       <img src="Bar1.jpeg" alt="Ponçage et finition sur main courante d'un bar">
-      <div class="legende">Ponçage et finition sur main courante d'un bar - Atelier Lanoë — (Photo Jeanne Dagron) - 2025</div>
+      <div class="legende">Ponçage et finition - Atelier Lanoë (Photo Jeanne Dagron) - 2025</div>
     </div>
-        <div class="galerie">
     <div class="photo-card">
       <img src="Bar2.jpeg" alt="Ponçage et finition sur main courante d'un bar">
-      <div class="legende">Ponçage et finition sur main courante d'un bar - Atelier Lanoë — (Photo Jeanne Dagron) - 2025</div>
+      <div class="legende">Ponçage et finition - Atelier Lanoë (Photo Jeanne Dagron) - 2025</div>
     </div>
-          <div class="galerie">
     <div class="photo-card">
       <img src="Finition.jpg" alt="Finition ammoniaque et huile de lin sur chêne">
-      <div class="legende">Finition ammoniaque et huile de lin sur chêne - Atelier Lanoë — 2026</div>
+      <div class="legende">Finition ammoniaque et huile de lin sur chêne - Atelier Lanoë - 2026</div>
     </div>
-            <div class="galerie">
     <div class="photo-card">
       <img src="Finition1.jpg" alt="Finition ammoniaque et huile de lin sur chêne">
-      <div class="legende">Finition ammoniaque et huile de lin sur chêne - Atelier Lanoë — 2026</div>
+      <div class="legende">Finition ammoniaque et huile de lin sur chêne - Atelier Lanoë - 2026</div>
     </div>
-              <div class="galerie">
     <div class="photo-card">
       <img src="Finition2.jpg" alt="Finition ammoniaque et huile de lin sur chêne">
-      <div class="legende">Finition ammoniaque et huile de lin sur chêne - Atelier Lanoë — 2026</div>
+      <div class="legende">Finition ammoniaque et huile de lin sur chêne - Atelier Lanoë - 2026</div>
     </div>
-                
-              </div>
+  </div>
 </section>
 
 <!-- ══════════════ PROFIL ══════════════ -->
@@ -610,13 +533,11 @@
   <a href="mailto:brodinsimon@gmail.com">Envoyer un message</a>
 </div>
 
-<!-- ══════════════ PIED ══════════════ -->
 <footer>
   <span>Simon Brodin — Menuisier Fabricant, Rennes</span>
   <span>© 2026</span>
 </footer>
 
-<!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox" onclick="closeLightbox()">
   <span class="lightbox-close" onclick="closeLightbox()">✕</span>
   <img id="lightbox-img" src="" alt="">
@@ -631,11 +552,9 @@
       document.getElementById('lightbox').classList.add('active');
     });
   });
-
   function closeLightbox() {
     document.getElementById('lightbox').classList.remove('active');
   }
-
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') closeLightbox();
   });
